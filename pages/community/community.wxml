@@ -1,0 +1,23 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index">
+    <view slot="content" style="font-size:42rpx;">社区</view>
+  </cu-custom>
+  <view class="body flex">
+    <view class="community">
+      <view class="header flex align-center justify-between" hover-class="click" bindtap="toPyq">
+        <view class="flex align-center">
+          <image src="/image/community_select.png" style="width:50rpx;height:50rpx"></image>
+          <view class="font-title" style="margin-left:15rpx;">社区</view>
+        </view>
+        <image src="/image/next_green.png" style="width:30rpx;height:30rpx"></image>
+      </view>
+      <view class="map_border"></view>
+      <view class="map_box">
+        <view>附近用户</view>
+        <view style="width:100%;height:95%;margin-top:10rpx;">
+          <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width:100%;height:100%;"></map>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

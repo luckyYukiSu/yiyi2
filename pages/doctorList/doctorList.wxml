@@ -1,0 +1,58 @@
+<!--背景-->
+<view class="main flex flex-column bg-gradual-index-bg">
+  <!---顶部-->
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">在线医师</view>
+  </cu-custom>
+  <!--主要内容-->
+  <view class="bodypadding">
+    <view class="body">
+      <!--搜索区域-->
+      <view class="search flex align-center">
+        <!--搜索框-->
+        <image style="width:45rpx;height:45rpx;" src="/image/search.png" bindtap="search" />
+        <input type="text" class="search_input" style="margin-left: 10rpx;" placeholder="请输入要搜索的医生" />
+        <!-- 搜索按钮部分 -->
+        <view class="search_btn click">搜索</view>
+      </view>
+      <!--主体内容-->
+      <view class="doctor_list" wx:for="{{doctorList}}">
+        <view class="view_container flex align-center justify-center">
+          <view class="doctor_message">
+            <view class="first_row flex">
+              <view class="doctor_image flex align-center justify-center">
+                <image src="{{item.image}}" mode="" />
+              </view>
+              <view style="margin-left: 30rpx;">
+                <text class="doctor_name">{{item.name}}</text><text class="doctor_work">{{item.work}} \n</text><br />
+                <view class="flex align-center" style="margin-top: 20rpx;">
+                  <view class="doctor_title" style="width: 80rpx;">{{item.title}}</view>
+                  <view class="doctor_location">{{item.location}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="second_row">
+              {{item.ascendency}}
+            </view>
+          </view>
+        </view>
+        <view class="doctor_fun flex justify-around">
+          <view class="doctor_fun_item flex align-center justify-center">
+            <image src="https://6c6b-lkj-7guox3sve2f77bd6-1311245690.tcb.qcloud.la/Yuki/icon/message.png?sign=ba03bf5c19181048bce8a8e7bc5dda24&t=1683367284" mode=""/>
+            <view style="margin-left: 10rpx;">图文咨询</view>
+          </view>
+          <view class="doctor_fun_item flex align-center justify-center">
+            <image src="https://6c6b-lkj-7guox3sve2f77bd6-1311245690.tcb.qcloud.la/Yuki/icon/camera.png?sign=714642a325b0f50d516b75bc4e5d6cec&t=1683367810" mode=""/>
+            <view style="margin-left: 10rpx;">视频问诊</view>
+          </view>
+          <view class="doctor_fun_item flex align-center justify-center">
+            <image src="https://6c6b-lkj-7guox3sve2f77bd6-1311245690.tcb.qcloud.la/Yuki/icon/telephone.png?sign=6664c4ced94fbe798fc7676fb115da12&t=1683368001" mode=""/>
+            <view style="margin-left: 10rpx;">电话会诊</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

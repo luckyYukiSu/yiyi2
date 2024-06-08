@@ -1,0 +1,40 @@
+.body{
+  width: 100%;
+  padding: 30rpx;
+}
+.container{
+  width: 100%;
+  padding: 25rpx;
+  /* height: 900rpx; */
+  border-radius: 20rpx;
+  background: linear-gradient(#F4F5C1,#BAECCA);
+}
+.header{
+  width: 100%;
+  overflow: hidden;
+}
+.custom{
+  width: 100%;
+  position: relative;
+  margin-top: 15rpx;
+  padding: 5rpx;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.close_img{
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+.add{
+  width: 100%;
+  margin-top: 25rpx;
+}
+.add_img{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background: #fff;
+}

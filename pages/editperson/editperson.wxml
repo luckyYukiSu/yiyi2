@@ -1,0 +1,113 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">修改个人信息</view>
+  </cu-custom>
+  <view class="body">
+    <view class="edit">
+      <!-- 头部组件 -->
+      <view class="header flex align-center justify-between" hover-class="click">
+        <view class="flex align-center">
+          <image src="/image/person_yellow.png" style="width:55rpx;height:55rpx"></image>
+          <view class="font-title" style="margin-left:15rpx;">个人信息更新</view>
+        </view>
+        <view class="flex align-center" bindtap="saveMessge">
+          <view class="font-small" style="margin-right:10rpx;">保存</view>
+          <image src="/image/next_green.png" style="width:30rpx;height:30rpx"></image>
+        </view>
+      </view>
+
+      <!-- 绿色的横线 -->
+      <view class="map_border"></view>
+
+      <!-- 内容编辑区域 -->
+      <view class="edit_box font-content">
+        <!-- 获取头像 -->
+        <view class="img_set" hover-class="none" hover-stop-propagation="false">
+            <view class="avatar" hover-class="none" hover-stop-propagation="false">
+              <image src="{{avatarUrl}}"></image>
+            </view>
+            <view class="" hover-class="none" hover-stop-propagation="false">
+              <button open-type="chooseAvatar" bindchooseavatar="bindchooseavatar">
+              获取头像
+            </button>
+            </view>
+            
+        </view>
+
+        <!-- 微信昵称 -->
+        
+        <form bindsubmit="formsubmit">
+          <view class="form-nickname">
+            <text class="form-label">昵称</text>
+            <view class="input-wrap">
+              <input type="nickname" placeholder="{{nickName}}" name="nickname" />
+            </view>
+          </view>
+          <button form-type="submit" type="primary">提交</button>
+        </form>
+
+
+
+      <!-- 性别选择 -->
+        <view class="cu-form-group" style="margin-top: 20rpx;">
+          <view class="title">性别</view>
+          <view class="flex algin-center">
+            <view>
+              <view class="cu-form-group">
+                <view class="title">男</view>
+                <checkbox-group bindchange="changeSex">
+                  <checkbox value="男" class="round blue" checked="{{message.sex=='男'?true:false}}"></checkbox>
+                </checkbox-group>
+              </view>
+            </view>
+            <view>
+              <view class="cu-form-group">
+                <view class="title">女</view>
+                <checkbox-group bindchange="changeSex">
+                  <checkbox value="女" class="round blue" checked="{{message.sex=='女'?true:false}}" bindchange="changeSex"></checkbox>
+                </checkbox-group>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 设置身高 -->
+        <view class="cu-form-group" style="margin-top: 20rpx;">
+          <view class="title">身高</view>
+          <input type="digit" bindinput="editMessage" data-sign="height" placeholder="请输入身高" value="{{message.height}}"></input>
+          <view class="cu-capsule radius">
+            <view class="cu-tag bg-blue">厘米</view>
+          </view>
+        </view>
+        <view class="cu-form-group" style="margin-top: 20rpx;">
+          <view class="title">体重</view>
+          <input type="digit" bindinput="editMessage" data-sign="weight" placeholder="请输入体重" value="{{message.weight}}"></input>
+          <view class="cu-capsule radius">
+            <view class="cu-tag bg-blue">千克</view>
+          </view>
+        </view>
+        <view class="cu-form-group" style="margin-top: 20rpx;">
+          <view class="title">年龄</view>
+          <input type="digit" bindinput="editMessage" data-sign="age" placeholder="请输入年龄" value="{{message.age}}"></input>
+          <view class="cu-capsule radius">
+            <view class="cu-tag bg-blue">周岁</view>
+          </view>
+        </view>
+        <view class="cu-form-group" style="margin-top: 20rpx;">
+          <view class="title">手机号码</view>
+          <input type="digit" bindinput="editMessage" data-sign="phone" placeholder="请输入手机号码" value="{{message.phone}}"></input>
+          <view class="cu-capsule radius">
+            <view class="cu-tag bg-blue">+86</view>
+            <view class="cu-tag line-blue">中国大陆</view>
+          </view>
+        </view>
+        <view class="cu-form-group" style="margin-top: 20rpx;">
+          <view class="title">电子邮箱</view>
+          <input type="digit" bindinput="editMessage" data-sign="e_mail" placeholder="请输如电子邮箱" value="{{message.e_mail}}"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,26 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">发表动态</view>
+  </cu-custom>
+  <view class="body">
+    <view class="box">
+      <textarea class="desc" placeholder="请输入内容" bindinput="getInput" />
+      <view class="iamgeRootAll">
+        <block wx:for="{{imgList}}" wx:key="index">
+          <view class="imgItem">
+            <image class="img" src='{{item}}' mode='aspectFill'></image>
+            <image class="closeImg" bindtap="DeleteImg" src="/image/close.png" data-index="{{index}}"></image>
+          </view>
+        </block>
+      <!-- 选择图片按钮 -->
+        <view wx:if="{{imgList.length<9}}" class="imgItem" bindtap="ChooseImage">
+          <image class="photo" src="/image/addpyq.png"></image>
+        </view>
+      </view>
+      <view class="publish flex align-center justify-center">
+        <button class="cu-btn round bg-green font-title" bindtap="publish">发表动态</button>
+      </view>
+    </view>
+  </view>
+</view>

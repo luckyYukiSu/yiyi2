@@ -1,0 +1,56 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">购物车</view>
+  </cu-custom>
+  <view class="body">
+    <view class="shop">
+      <view class="list_header">管理</view>
+      <view class="shop_list" wx:for="{{shopList}}" wx:key="index">
+        <view class="list_header flex align-center">
+          <radio checked="{{item.select}}" bindtap="setAllSelect" data-message="shopList" data-index="{{index}}"></radio>
+          <image src="{{item.logo}}" style="width:45rpx;height:45rpx;margin-left:15rpx;"></image>
+          <view class="font_store" style="margin-left:15rpx;">{{item.store}}</view>
+          <image src="/image/next_grey.png" style="width:30rpx;height:30rpx;margin-left:15rpx;"></image>
+        </view>
+        <view class="list_content flex align-center" wx:for="{{item.goods}}" wx:key="idx" wx:for-item="value" wx:for-index="idx">
+          <radio checked="{{value.select}}"  bindtap="setAllSelect" data-message="goods" data-index="{{index}}" data-idx="{{idx}}"></radio>
+          <image src="{{value.image}}" style="width:180rpx;height:180rpx;"></image>
+          <view style="width:55%;margin-left:15rpx;">
+            <view class="goods_name" style="margin-bottom: 10rpx;">{{value.name}}</view>
+            <view class="flex align-center" style="margin-bottom: 10rpx;">
+              <view></view>
+              <view class="goods_type flex align-center">
+                <view>{{value.type}}</view>
+                <image src="/image/bottom_grey.png" style="width:20rpx;height:20rpx;margin-left:5rpx;"></image>
+              </view>
+            </view>
+            <view class="flex" style="margin-bottom: 10rpx;">
+              <view></view>
+              <view class="goods_tip">{{value.tip}}</view>
+            </view>
+            <view class="flex align-center justify-between">
+              <view class="goods_credits">{{value.credits}}<text class="font-small">积分</text></view>
+              <view class="goods_number">✖{{value.numbers}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom flex align-center justify-between">
+    <view class="flex align-center" bindtap="setAllSelect" data-message="isAllSelect">
+      <!-- <view>
+				<radio class="blue radio"></radio>
+				<radio class="red margin-left-sm"></radio>
+      </view> -->
+      <!-- <checkbox class="round custom" checked="{{isAllSelect}}"></checkbox> -->
+      <radio checked="{{isAllSelect}}" color="#E65300"></radio>
+      <view style="margin-left: 15rpx;">全选</view>
+    </view>
+    <view class="flex align-center">
+      <view>合计：<text class="text-price text-red">{{sumCredits}}积分</text></view>
+      <button class="submit_btn cu-btn shadow-blur round" style="margin-left: 15rpx;">结算</button>
+    </view>
+  </view>
+</view>

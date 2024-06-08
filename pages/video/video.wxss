@@ -1,0 +1,76 @@
+.font-big{
+  font-size: 36rpx;
+}
+.font-small{
+  font-size: 28rpx;
+  font-weight: 500rpx;
+}
+.font-smallist{
+  font-size: 20rpx;
+  font-weight: 300rpx;
+}
+.body{
+  width: 100%;
+  padding: 30rpx;
+}
+.video{
+  width: 100%;
+  padding: 30rpx 25rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(#DEECDD,#C1DFC4);
+}
+.video_header{
+  width: 100%;
+}
+.video_detail{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 15rpx;
+  margin-top: 30rpx;
+  /* padding: 20rpx; */
+}
+.introduction{
+  width: 100%;
+  margin-top: 35rpx;
+  border-radius: 15rpx;
+  background: #fff;
+}
+.introd_header{
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 4rpx solid #E3F0E9;
+}
+.introd_detail{
+  width: 100%;
+  padding: 20rpx;
+  text-indent: 2em;
+}
+.comment{
+  width: 100%;
+  margin-top: 30rpx;
+  border-radius: 15rpx;
+  background: #fff;
+}
+.comment_header{
+  width: 100%;
+  padding: 20rpx;
+}
+.comment_list{
+  width: 100%;
+  padding: 20rpx;
+  border-top: 4rpx solid #E3F0E9;
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #98A39F;
+}
+.avatar image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.comment_content{
+  text-indent: 2em;
+}

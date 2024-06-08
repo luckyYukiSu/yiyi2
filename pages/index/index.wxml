@@ -1,0 +1,134 @@
+<view class="main flex flex-column bg-gradual-index-bg" >
+  <view slot="content" style="font-size:40rpx;margin-left:5%;margin-top:11%">奕奕</view>
+
+  <!-- 登录选择 -->
+  <view wx:if="{{!isLogin}}" class="body">
+    <view class="avatar flex align-center justify-center" bindtap="login">
+      <image src="https://s2.loli.net/2022/02/17/1xcyLQv2B95JF6m.jpg"></image>
+    </view>
+    <view class="login">登录</view>
+  </view>
+
+<!-- 
+  1.更改头像框的颜色为蓝色，整体更加适配主题颜色，还有页面的渐变色要进行更改
+ -->
+  <!-- body部分代码 -->
+  <view wx:else class="body">
+
+    <!-- 搜索按钮部分 -->
+    <view class="search_img flex align-center justify-center">
+      <image style="width:70%;height:70%;" src="/image/search2.png"></image>
+    </view>
+
+    <view style="font-size: 30rpx; left: 50rpx; padding-left: 190rpx; position: relative; top: 90rpx;">Y1Y1，已累计锻炼  <span style="color: orange;">10{{sportdays}}</span>  天</view>
+
+    <!-- 头像框 -->
+    <view class="personMsg">
+      <view class="login_avatar flex align-center justify-center">
+        <image src="{{avatarUrl}}"></image>
+
+      </view>
+      <view class="exercise_days flex justify-center">今天已锻炼{{sportMin}}分钟</view>
+    </view>
+
+    <!-- 运动推荐部分的内容 -->
+    <view class="sportCon" style="background-color: whitesmoke;">
+      <view class="sportCon_body" wx:if="{{sportList}}">
+
+         <!-- 今日运动目标 -->
+        <view class="sport_target" style="height:45%;">
+          <view class="flex align-center">
+            <image src="/image/flag.png"></image>
+            <view class="font-title" style="margin-left: 15rpx;">今日运动目标</view>
+          </view>
+          <!-- 今日运动目标列表 -->
+          <view wx:for="{{sportList}}" wx:key="index" class="sport_item flex align-center">
+            <image src="{{item.precentNum=='100%'?'/image/select.png':'/image/select_none.png'}}"></image>
+            <view class="font-content target_name">{{item.name}}</view>
+            <view class="cu-progress round" style="width:70%;margin-left:10rpx;">
+              <view class="bg-process round" style="width:{{item.precentSec}};">{{item.precentSec}}</view>
+            </view>
+          </view>
+          <!-- 完成目标数 -->
+          <view style="margin-top: 15rpx;">完成目标数：{{doneNum}}/{{sportList.length}}</view>
+        </view>
+
+        <!-- 分割线 -->
+        <view class="bottom_solid"></view>
+
+        <!-- 今日推荐运动方案 -->
+        <view class="sport_target" style="height:57%;">
+          <view class="flex align-center">
+            <image src="/image/recommand.png"></image>
+            <view class="font-title" style="margin-left: 15rpx;">今日推荐运动方案</view>
+          </view>
+          <view class="font-content" style="margin-top: 10rpx;">根据您的体质，推荐方案:</view>
+          <!-- 推荐方案的详情列表 -->
+          <view class="flex plan_list" wx:for="{{sportList}}" wx:key="index" bindtap="toSport">
+            <view class="plan_img" style="width:20%;">
+              <image src="{{item.img}}"></image>
+            </view>
+            <view style="width:75%;margin-left:10rpx;margin-top:-10rpx">
+              <view class="flex align-center justify-between">
+                <view class="font-content">{{item.name}}</view>
+                <view style="font-size:24rpx;">{{item.doneMin}}/{{item.sportMin}}分钟</view>
+              </view>
+              <view class="cu-progress round" style="width:100%;margin-left:10rpx;">
+                <view class="bg-process round" style="width:{{item.precentSec}}"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="sportCon_body flex align-center justify-center" wx:else>
+        <view class="no_sport">暂时没有运动方案</view>
+      </view>
+      <!-- 这张背景板图没有保存在云存储中，使用fileID，必须要申请域名；否则用户无法访问 -->
+      <!-- <image src="https://s2.loli.net/2022/02/17/Ka7AERN4iWCuesc.png"></image> -->
+    </view>
+
+    <!-- 自定义方案模块 -->
+    <view class="others flex justify-between">
+      <view class="custom" hover-class="click" bindtap="toCustom">
+        <view class="other_title flex align-center">
+          <image src="/image/custom.png" style="width:40rpx;height:40rpx;"></image>
+          <view class="font-title" style="margin-left:10rpx;">自定义方案</view>
+          <image class="next_img'" src="/image/next_grey.png"></image>
+        </view>
+        <view class="other_title_complete" hover-class="none" hover-stop-propagation="false">
+            (点击这里自定义运动方案)
+          </view>
+        <image src="/image/custom2.png" style="width:220rpx;height:220rpx;"></image>
+      </view>
+      
+      <!-- 统计与预约问诊模块-->
+      <view class="extend flex flex-column justify-between align-center">
+
+        <!-- 统计模块 -->
+        <view class="extend_child child1" hover-class="click" bindtap="toStatistics">
+          <view class="other_title flex align-center">
+            <image src="/image/census.png" style="width:40rpx;height:40rpx;"></image>
+            <view class="font-title" style="margin-left:10rpx;">统计</view>
+            <image class="next_img'" src="/image/next_grey.png"></image>
+          </view>
+          <view class="other_title_complete" hover-class="none" hover-stop-propagation="false">
+            （点击这里进入详情页）
+          </view>
+          <!-- 背景图 -->
+          <image class="right_img" src="/image/census2.png" ></image>
+        </view>
+
+        <!-- 预约问诊模块 -->
+        <view class="extend_child child2" hover-class="click" bindtap="toPerson">
+          <view class="other_title flex align-center">
+            <image src="/image/update.png" style="width:40rpx;height:40rpx;"></image>
+            <view class="font-title" style="margin-left:10rpx;">预约问诊</view>
+            <image class="next_img'" src="/image/next_grey.png"></image>
+          </view>
+          <!-- 背景图 -->
+          <image class="right_img" src="/image/update2.png" ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

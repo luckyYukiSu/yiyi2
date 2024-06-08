@@ -1,0 +1,53 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">方案编辑</view>
+  </cu-custom>
+  <view class="body">
+    <view class="container">
+      <view class="header flex align-center justify-between" hover-class="click" bindtap="save">
+        <view class="flex align-center">
+          <image src="/image/edit_custom.png" style="width:55rpx;height:55rpx"></image>
+          <view class="font-title">方案编辑</view>
+        </view>
+        <view class="flex align-center">
+          <view class="font-small" style="margin-right:10rpx;">保存</view>
+          <image src="/image/next_grey.png" style="width:30rpx;height:30rpx"></image>
+        </view>
+      </view>
+      <view class="custom" wx:for="{{sportCustomList}}" wx:key="index">
+        <view class="cu-form-group">
+          <view class="title flex align-center">
+            <image src="/image/square.png" style="width:25rpx;height:25rpx;"></image>
+            <view>运动类型{{index+1}}</view>
+          </view>
+          <picker bindchange="PickerChange" value="{{index}}" range="{{sportName}}" data-message="sportName"
+            data-index="{{index}}">
+            <view class="picker">{{sportName[item.sportNameIndex]}}</view>
+          </picker>
+        </view>
+        <view class="cu-form-group">
+          <view class="title">今日运动次数</view>
+          <picker bindchange="PickerChange" value="{{index}}" range="{{numbers}}" data-message="numbers"
+            data-index="{{index}}">
+            <view class="picker">{{numbers[item.numbersIndex]}}</view>
+          </picker>
+        </view>
+        <view class="cu-form-group">
+          <view class="title">运动时间(单位：分钟)</view>
+          <picker bindchange="PickerChange" value="{{index}}" range="{{sportMin}}" data-message="sportMin"
+            data-index="{{index}}">
+            <view class="picker">{{sportMin[item.sportMinIndex]}}</view>
+          </picker>
+        </view>
+        <image class="close_img" src="/image/close.png" wx:if="{{index>0}}" catchtap="deleteSport"
+          data-index="{{index}}"></image>
+      </view>
+      <view class="add flex align-center justify-end" wx:if="{{sportCustomList.length<3}}" bindtap="add">
+        <view class="add_img flex align-center justify-center">
+          <image src="/image/add.png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

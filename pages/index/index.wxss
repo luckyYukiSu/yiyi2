@@ -1,0 +1,220 @@
+/* 搜索图标样式 */
+.search_img{
+  width: 70rpx;
+  height: 70rpx;
+  background: #04636f;
+  border-radius: 50%;
+  /* 设置渐变色边框 */
+  border: 7rpx rgb(216, 172, 60) solid;
+  position: absolute;
+  top: 35rpx;
+  right: 50rpx;
+}
+
+/* 个人头像框的样式 */
+.login_avatar{
+  background: rgba(3, 96, 84, 0.7);
+  /* backdrop-filter: blur(10rpx); */
+  position: relative;
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+  margin-left: 10%;
+  margin-top: 5%;
+  z-index: 99;
+}
+
+
+.login_avatar image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  z-index: 99;  /*只对设置了position属性有效*/
+  /* border: #9FDDB3 10rpx solid; */
+}
+
+/* 运动模板的样式 */
+.sportCon{
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 65%;
+  /* display: flex; */
+  position: relative;
+  margin-top:-10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* 设置圆角和白色背景 */
+  border-radius: 5%;
+  background: #fff;
+  
+}
+
+.sportCon_body{
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  /* background: red; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 30rpx 20rpx;
+  z-index: 9;
+}
+
+/*  */
+
+.avatar{
+  width: 220rpx;
+  height: 220rpx;
+  /* position: absolute; */
+  margin: 300rpx auto;
+  margin-bottom: 50rpx;
+  border-radius: 50%;
+  border: 10rpx solid #3B5E56;
+  box-shadow: rgb(49, 48, 48) 0 0 15rpx;
+}
+.avatar image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+.login{
+  width: 100%;
+  text-align: center;
+  font-size: 45rpx;
+}
+
+.exercise_days{
+  width: 65%;
+  height: 120rpx;
+  border-radius: 20rpx;
+  align-items: flex-end;
+  padding-bottom: 5rpx;
+  position: absolute;
+  top: 70rpx;
+  z-index: -1;
+  background: #F9BB75;
+  box-shadow: #325957 8rpx 8rpx 8rpx;
+}
+
+.no_sport{
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #b0b4b4;
+}
+.sport_target{
+  width: 100%;
+  height: 52%;
+  padding: 30rpx 20rpx 20rpx 20rpx;
+  border: 5rpx soild #000;
+}
+.sport_target image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.sport_item{
+  margin-top: 10rpx;
+}
+.target_name{
+  width: 120rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.bottom_solid{
+  width: 97%;
+  height: 3rpx;
+  position: relative;
+  left: 12rpx;
+  background: #000;
+}
+.plan_list{
+  width: 100%;
+  height: 23%;
+  align-items: flex-end;
+  margin-top: 5rpx;
+}
+.plan_img{
+  width: 100rpx;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.plan_img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+
+/* 其他模块的样式 */
+.others{
+  width: 100%;
+  padding: 30rpx 35rpx;
+}
+
+/* 自定义方案的样式 */
+.custom{
+  width: 45%;
+  height: 350rpx;
+  position: relative;
+  overflow: hidden;
+  padding: 20rpx 15rpx;
+  border-radius: 15rpx;
+  background: linear-gradient(#C1DFC4,#FADDE3);
+  box-shadow: #325957 8rpx 8rpx 8rpx,
+              #b0b4b4 -1rpx -1rpx 5rpx;
+}
+.custom > image{
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.next_img{
+  width:20rpx;
+  height:20rpx;
+  position: absolute;
+  right: 5rpx;
+  opacity: 0.5;
+}
+.extend{
+  width: 45%;
+  height: 350rpx;
+}
+.extend_child{
+  width: 100%;
+  height: 45%;
+  position: relative;
+  overflow: hidden;
+  padding: 20rpx 15rpx;
+  border-radius: 15rpx;
+    /* 元素的阴影效果，有两个阴影层，一个向右下方偏移8rpx，
+  另一个向左上方偏移1rpx，模糊半径分别为8rpx和5rpx，阴影颜色分别为#325957和#b0b4b4。 */
+  box-shadow: #325957 8rpx 8rpx 8rpx,
+  #b0b4b4 -1rpx -1rpx 5rpx;
+}
+.child1{
+  background: rgb(208, 233, 210);
+}
+.child2{
+  background: linear-gradient(#9FDDB3,#CDDE8E);
+}
+.other_title{
+  position: relative;
+  z-index: 99;
+}
+.other_title_complete{
+  font-size: small;
+  position: relative;
+  z-index: 5;
+  color: #838686;
+  margin-top: 3%;
+}
+.right_img{
+  position: absolute;
+  right: 10%;
+  top: 0;
+  width: 170rpx;
+  height: 170rpx;
+  z-index: 0;
+}

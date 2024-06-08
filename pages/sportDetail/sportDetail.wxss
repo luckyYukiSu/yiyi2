@@ -1,0 +1,41 @@
+.font-big{
+  font-size: 38rpx;
+}
+.font-sport{
+  font-size: 32rpx;
+}
+.font-sport-small{
+  font-size: 26rpx;
+}
+.body{
+  padding: 30rpx;
+}
+.container{
+  width: 100%;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.header{
+  width: 100%;
+  padding: 30rpx;
+  color: #D94D1C;
+}
+.sport_list{
+  width: 100%;
+  padding: 25rpx 40rpx;
+  border-top: 4rpx solid #E3F0E9;
+}
+.sport_img{
+  width: 160rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+.sport_btn{
+  width: 100%;
+  margin-top: 25rpx;
+  padding: 0 50rpx;
+}
+.done{
+  width: 100%;
+  margin-top: 25rpx;
+}

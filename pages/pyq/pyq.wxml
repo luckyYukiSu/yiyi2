@@ -1,0 +1,29 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">社区动态</view>
+  </cu-custom>
+  <view class="body">
+    <view class="box">
+      <view class="header flex align-center justify-between">
+        <view>附近共有{{userNumber}}位用户进行锻炼</view>
+        <button class="cu-btn round bg-green" bindtap="toPyqPublish">发表动态</button>
+      </view>
+      <view class="box_content">
+        <view class="flex justify-between" wx:for="{{pyqList}}" wx:key="index" style="width:100%;margin-bottom:25rpx;">
+          <view class="avatar flex align-center justify-center">
+            <image src="{{item.userInfo.avatarUrl}}"></image>
+          </view>
+          <view class="pyq_content">
+            <view>{{item.userInfo.nickName}}</view>
+            <view style="margin-top:15rpx;font-weight:500;font-size:32rpx;">{{item.desc}}</view>
+            <view class="flex pyq_img align-center justify-between" style="margin-top:15rpx">
+              <image wx:for="{{item.fileIDs}}" wx:for-item="value" wx:for-index="idx" src="{{value}}" wx:key="idx" mode='aspectFill'></image>
+            </view>
+            <view style="margin-top:15rpx;font-weight:500;font-size:20rpx;">{{item.date}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

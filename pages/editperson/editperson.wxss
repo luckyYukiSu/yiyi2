@@ -1,0 +1,94 @@
+.body{
+  width: 100%;
+  padding: 60rpx 40rpx 30rpx 40rpx;
+}
+.edit{
+  width: 100%;
+  height: fit-content;
+  /* flex: 1; */
+  /* padding: 30rpx; */
+  background: #fff;
+  border-radius: 20rpx;
+}
+.header{
+  width: 100%;
+  padding: 20rpx;
+  height: 12%;
+  overflow: hidden;
+}
+.map_border{
+  width: 100%;
+  height: 3rpx;
+  background: #61AFA4;
+  /* 增加弹性布局 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 编辑区样式 */
+.edit_box{
+  width: 100%;
+  height: 80%;
+  padding: 20rpx;
+}
+
+/* 头像区域设置 */
+.img_set{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* 头像设置 */
+.avatar{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background: #55877E;
+  box-shadow: rgb(44, 43, 43) 0rpx 0rpx 10rpx;
+  margin-bottom: 10px;
+}
+.avatar image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+button {
+  width: fit-content;
+}
+
+/* 昵称部分的样式设置 */
+.form-nickname {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.form-nickname .input-wrap {
+  flex: 1;
+  margin-left: 20rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 5rpx;
+  padding: 10rpx;
+}
+
+.form-nickname .input-wrap input {
+  border: none;
+  outline: none;
+  font-size: 28rpx;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+/* 输入框设置 */
+input{
+  margin-left: 20rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 5rpx;
+  /* padding: 10rpx; */
+}

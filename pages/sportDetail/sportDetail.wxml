@@ -1,0 +1,70 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">运动方案详情</view>
+  </cu-custom>
+  <view class="body">
+    <view class="container">
+      <view class="header font-big">⭐ 这是您的运动方案</view>
+      <view class="sport_list" wx:for="{{sportList}}" wx:key="index">
+        <view class="flex align-center">
+          <image class="sport_img" src="{{item.img}}" mode="widthFix"></image>
+          <view style="margin-left: 20rpx;">
+            <view class="font-sport">{{item.name}}</view>
+            <view class="flex align-center font-sport-small">
+              <text>运动强度：</text><text>{{item.strengthName}}</text>
+              <view style="width:10rpx;"></view>
+              <!-- <view wx:for="{{item.strength}}" wx:item="value" wx:index="idx" wx:key="idx"> -->
+              <view wx:for="{{item.strengthName=='低'?1:(item.strengthName=='中'?2:3)}}" wx:for-item="value" wx:index="idx" wx:key="idx">
+                <image
+                  src="{{item.strengthName=='低'?'/image/strength_low.png':(item.strengthName=='中'?'/image/strength_medium.png':'/image/strength_high.png')}}"
+                  style="width:35rpx;height:35rpx;"></image>
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <!-- <view class="flex align-center justify-between" style="width:100%;margin-top:20rpx;">
+          <view>运动次数</view>
+          <view class="text-orange"><text>{{item.numbers}}</text>次</view>
+        </view>
+        <view class="flex align-center justify-between" style="width:100%;margin-top:20rpx;">
+          <view>每次运动组数</view>
+          <view class="text-orange"><text>{{item.groups}}</text>组</view>
+        </view>
+        <view class="flex align-center justify-between" style="width:100%;margin-top:20rpx;">
+          <view>今日运动时间</view>
+          <view class="text-orange"><text>{{item.sportMin}}</text>分钟</view>
+        </view> -->
+        <view class="done">
+          <view class="flex align-center justify-between">
+            <view>今日单次运动时间</view>
+            <view class="text-orange">{{item.doneMin}}/{{item.sportMin}}分钟</view>
+          </view>
+          <view class="cu-progress round" style="width:100%;margin-top:15rpx;">
+            <view class="bg-process round" style="width:{{item.precentSec}};">{{item.precentSec}}</view>
+          </view>
+        </view>
+        <view class="done">
+          <view class="flex align-center justify-between">
+            <view>今日运动完成次数</view>
+            <view class="text-orange">{{item.doneNumbers}}/{{item.numbers}}次</view>
+          </view>
+          <view class="cu-progress round" style="width:100%;margin-top:15rpx;">
+            <view class="bg-process round" style="width:{{item.precentNum}};">{{item.precentNum}}</view>
+          </view>
+        </view>
+        <view class="sport_btn flex align-center justify-between">
+          <button class="cu-btn bg-red lg" bindtap="toVideo">观看视频</button>
+          <view wx:if="{{!item.isStart}}">
+            <button class="cu-btn bg-red lg" bindtap="setSportStatu" data-index="{{index}}">开始记录</button>
+          </view>
+          <view wx:else class="flex align-center justify-between" bindtap="setSportStatu" data-index="{{index}}">
+            <button class="cu-btn block bg-red lg">
+              <text class="cuIcon-loading2 iconfont-spin"></text> 停止运动</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

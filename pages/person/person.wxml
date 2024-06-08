@@ -1,0 +1,71 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index">
+    <view slot="content" style="font-size:42rpx;">个人中心</view>
+  </cu-custom>
+  <view class="body">
+<!-- 用户头像部分的代码 -->
+    <view class="header flex" wx:if="{{isLogin}}">
+      <view class="avatar flex align-center justify-center">
+        <image src="{{avatarUrl}}"></image>
+      </view>
+      <view class="data">
+        <view class="font-title">{{userInfo.nickName}}</view>
+        <view class="flex align-center flex-row" style="margin-top: 30rpx;">
+          <image src="/image/credits.png" style="height:35rpx;width:35rpx;"></image>
+          <view class="font-content" style="margin-left: 10rpx;">积分：<text class="text-orange"
+              style="margin-right:5rpx;">{{credits}}</text>分</view>
+        </view>
+      </view>
+    </view>
+
+<!-- 用户未完善个人信息前的代码 -->
+<view class="header"  hover-class="none" hover-stop-propagation="false">
+  <view class="avatar flex align-center justify-center">
+        <image src="{{avatarUrl}}"></image>
+      </view>
+      <view class="data">
+        <view class="font-title" hover-class="none" hover-stop-propagation="false">
+          {{nickName?nickName:tip}}
+        </view>
+        </view>
+</view>
+
+    <view class="function">
+      <view class="function_list flex align-center justify-between" hover-class="click" bindtap="toEdit">
+        <view class="flex align-center">
+          <image class="list_img" src="/image/edit.png"></image>
+          <view class="font-title" style="font-weight: 500;margin-left: 20rpx;">修改个人信息</view>
+        </view>
+        <image class="list_next" src="/image/next_white.png"></image>
+      </view>
+      <view class="function_list flex align-center justify-between" hover-class="click" bindtap="toPhysique">
+        <view class="flex align-center">
+          <image class="list_img" src="/image/update.png"></image>
+          <view class="font-title" style="font-weight: 500;margin-left: 20rpx;">更新体质数据</view>
+        </view>
+        <image class="list_next" src="/image/next_white.png"></image>
+      </view>
+      <view class="function_list flex align-center justify-between star" hover-class="click">
+        <view class="flex align-center">
+          <image class="list_img" src="/image/star.png"></image>
+          <view class="font-title" style="font-weight: 500;margin-left: 20rpx;">我的收藏</view>
+        </view>
+        <image class="list_next" src="/image/next_white.png"></image>
+      </view>
+      <view class="function_list flex align-center justify-between service" hover-class="click">
+        <view class="flex align-center">
+          <image class="list_img" src="/image/service.png"></image>
+          <view class="font-title" style="font-weight: 500;margin-left: 20rpx;">客服中心</view>
+        </view>
+        <image class="list_next" src="/image/next_white.png"></image>
+      </view>
+      <view class="function_list flex align-center justify-between explain" hover-class="click">
+        <view class="flex align-center">
+          <image class="list_img" src="/image/explain.png"></image>
+          <view class="font-title" style="font-weight: 500;margin-left: 20rpx;">使用说明</view>
+        </view>
+        <image class="list_next" src="/image/next_white.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

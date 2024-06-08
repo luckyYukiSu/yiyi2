@@ -1,0 +1,48 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">视频</view>
+  </cu-custom>
+  <view class="body">
+    <view class="video">
+      <view class="video_header flex align-center">
+        <image src="/image/video.png" style="width:50rpx;height:50rpx;"></image>
+        <view class="font-big" style="margin-left: 20rpx;">视频: {{videoName}}</view>
+      </view>
+      <view class="video_detail">
+        <video src="{{videoSrc}}" style="width:100%;height:100%;"></video>
+      </view>
+    </view>
+    <view class="introduction">
+      <view class="introd_header font-big">简介</view>
+      <view class="introd_detail font-small">{{introduction}}</view>
+    </view>
+    <view class="introduction">
+      <view class="introd_header font-big">注意事项</view>
+      <view class="introd_detail font-small">动作要领：</view>
+      <view class="introd_detail font-small">右手翻掌上举，五指伸直并拢，掌心向上，指尖向左，同时左手下按，掌心向下，指尖向前，拇指开展，头向后仰，眼看右指尖，同时吸气，复原吸气，右侧动作和左侧相同，如此反复6次。</view>
+      <view class="introd_detail font-small">练习禁忌：</view>
+      <view class="introd_detail font-small">1、急性脊柱损伤者，严重心、脑、肺疾病患者以及体虚者不宜练习；</view>
+      <view class="introd_detail font-small">2、练习之后不宜马上蹲下休息、饮酒、洗澡、吃饭等。</view>
+      <view class="introd_detail font-small">练习要点：</view>
+      <view class="introd_detail font-small">1、注意练功中的呼吸。掌握鼻吸，鼻呼和舌顶上腭两个基本原则。对于腹式呼吸或者逆腹式呼吸等方法不应强求，坚持锻炼后水到渠成；</view>
+      <view class="introd_detail font-small">2、注意姿势的正确性。在练习的前几个月，随时注意姿势的细节调整，双脚开合距离脚尖方向和手势等细节。身体周正，初学时可赤脚站立地毯，意念注意自己的脚后跟，尾椎骨，脊椎和百会穴成一直线；</view>
+      <view class="introd_detail font-small">3、注意用力的问题。需要不徐不疾，连绵不断。留有余力，切忌生硬。</view>
+    </view>
+    <view class="comment">
+      <view class="comment_header font-big">热门评论</view>
+      <view class="comment_list" wx:for="{{comment}}" wx:key="index">
+        <view class="flex align-end">
+          <view class="avatar flex align-center justify-center">
+            <image src="{{item.avatarUrl}}"></image>
+          </view>
+          <view style="margin-left: 20rpx;">
+            <view class="font-small">{{item.nickName}}</view>
+            <view class="font-smallist">{{item.time}}</view>
+          </view>
+        </view>
+        <view class="comment_content font-small" style="margin-top: 15rpx;">{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>

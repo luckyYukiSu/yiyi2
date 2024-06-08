@@ -1,0 +1,27 @@
+.search{
+  /* width: 200px; */
+  position: relative;
+  top: 20rpx;
+  height: 70rpx;
+  /* background-color: #F9BB75; */
+}
+
+.search_input{
+  position: absolute;
+  width: 670rpx;
+  height: 60rpx;
+  margin: 0rpx 40rpx;
+  background: #f5ebe0;
+  border: 2rpx solid #32d17a;
+  border-radius: 20rpx;
+}
+
+.search_img{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top: 5rpx;
+  left:40rpx;
+  border-radius: 50%;
+  /* background-color: #F9BB75; */
+}

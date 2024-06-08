@@ -1,0 +1,76 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">体质数据</view>
+  </cu-custom>
+  <view class="body">
+    <view class="box">
+      <view class="box_header flex align-center justify-between" hover-class="click">
+        <view class="flex align-center">
+          <image src="/image/update.png" style="width:50rpx;height:50rpx;"></image>
+          <view class="update_font">体质数据更新</view>
+        </view>
+        <view class="flex align-center" bindtap="savePhysique">
+          <view class="save_font">保存</view>
+          <image src="/image/next_grey.png" style="width:20rpx;height:20rpx;"></image>
+        </view>
+      </view>
+      <view class="from">
+        <view class="cu-form-group" wx:for="{{inputData}}" wx:key="index">
+          <view class="title from_font">{{item.name}}</view>
+          <!-- 记录用户信息 -->
+          <input type="digit" class="from_font" bindinput="editMessage" data-index="{{index}}" placeholder="{{item.placeholder}}"
+            value="{{item.value}}"></input>
+          <view class="cu-capsule radius from_font">
+            <view class="cu-tag bg-blue radius">{{item.unit}}</view>
+          </view>
+        </view>
+        <view class="cu-form-group" wx:for="{{pickerList}}" wx:key="index">
+          <view class="title">{{item.message}}</view>
+          <picker mode="selector" bindchange="PickerChange" data-index="{{index}}" value="{{item.idx}}"
+            range="{{item.selector}}" range-key="{{'value'}}">
+            <view class="picker">
+              <!-- {{item.idx?item.selector[item.idx].value:'还没有进行选择'}} -->
+              {{item.selector[item.idx].value}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 模态框部分 -->
+  <!-- 这里是对话框 -->
+  <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">提示</view>
+        <!-- <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view> -->
+      </view>
+      <view class="padding-xl">您是否有过往病史</view>
+      <view class="cu-bar bg-white justify-end">
+        <view class="action">
+          <button class="cu-btn line-green text-green" bindtap="hideModal" data-message="no">否</button>
+          <button class="cu-btn bg-green margin-left" bindtap="hideModal" data-message="yes">是</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 这里是多选框 -->
+  <view class="cu-modal bottom-modal {{modalName=='ChooseModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <view class="cu-bar bg-white">
+        <view class="action text-blue" bindtap="hideModal">取消</view>
+        <view class="action text-green" bindtap="hideModal">确定</view>
+      </view>
+      <view class="grid col-3 padding-sm">
+        <view wx:for="{{checkbox}}" class="padding-xs" wx:key="index">
+          <button class="cu-btn green lg block {{item.checked?'bg-green':'line-green'}}" bindtap="ChooseCheckbox"
+            data-value="{{item.value}}" style="font-size:22rpx;font-weight:500;"> {{item.name}}
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

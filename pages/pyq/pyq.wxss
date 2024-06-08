@@ -1,0 +1,46 @@
+.body{
+  padding: 50rpx 30rpx 30rpx 30rpx;
+}
+.box{
+  width: 100%;
+  min-height: 200rpx;
+  border-radius: 20rpx;
+  /* margin-top: 100rpx; */
+  background: #fff;
+}
+.header{
+  width: 100%;
+  padding: 30rpx 20rpx;
+  border-bottom: 5rpx solid #DFEFE7;
+}
+.box_content{
+  width: 100%;
+  padding: 30rpx 20rpx;
+}
+.avatar{
+  width: 115rpx;
+  height: 115rpx;
+  border-radius: 50%;
+  background: #C1DFC4;
+  box-shadow: 0rpx 0rpx 5rpx rgb(141, 140, 140);
+}
+.avatar image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.pyq_content{
+  width: 78%;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  background: #C1DFC4;
+}
+.pyq_img{
+  width: 100%;
+  flex-wrap: wrap;
+}
+.pyq_img image{
+  width: 234rpx;
+  height: 234rpx;
+  margin-bottom: 15rpx;
+}

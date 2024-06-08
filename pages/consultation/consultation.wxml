@@ -1,0 +1,87 @@
+<!--背景-->
+<view class="main flex flex-column bg-gradual-index-bg">
+  <!---顶部-->
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">预约问诊</view>
+  </cu-custom>
+  <!--主要内容-->
+  <view class="body">
+    <!--搜索区域-->
+    <view class="search">
+      <!--搜索框-->
+      <input type="text" class="search_input" placeholder="请输入要搜索的医生" placeholder-style="margin: 0 55rpx" />
+      <!-- 搜索图片部分 -->
+      <view class="search_img flex align-center justify-center">
+        <image style="width:70%;height:70%;" src="/image/search.png" bindtap="search" />
+      </view>
+      <!---搜索按钮-->
+      <view style="position: relative; height: 70%; width: 80rpx; left: 620rpx; top: 7%; text-align: center; background-color: rgb(42, 117, 42); color: #f5ebe0; border-radius: 15%;">搜索</view>
+    </view>
+    <!--主体内容-->
+    <view style="background-color: white;" class="main_online" >
+      <!--问诊挂号-->
+      <view class="cs">
+        <view class="consultation" bindtap="toOnline">
+          <view class="consultation_inner1">
+            <view class="consultation_inner2">
+              <span style="display: block; font-size: 13px; text-align: center;">急速问诊</span>
+              <span style="display: block; position: absolute; font-size: 10px; left: 10px;  top: 60%; color: rgba(146, 141, 141, 0.767);">线上</span>
+              <span style="display: block; position: absolute; font-size: 10px; right: 10px;  top: 60%; color: rgba(146, 141, 141, 0.767);">便利</span>
+            </view>
+          </view>
+        </view>
+        <view class="consultation second" bindtap="toDoctorList">
+          <view class="consultation_inner1">
+            <view class="consultation_inner2">
+              <span style="display: block; font-size: 13px; text-align: center;">线上挂号</span>
+              <span style="display: block; position: absolute; font-size: 10px; left: 10px;  top: 60%; color: rgba(146, 141, 141, 0.767);">快速预约</span>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!--在线医师-->
+      <view class="online">
+        <view class="text1">
+          <view class='doctor_text'>在线医师</view>
+          <view class='doctor_more' bindtap="toDoctorList">更多</view>
+        </view>
+        <scroll-view scroll-y class="doctor_online">
+          <view class="doctor"  wx:for="{{doctorList}}" wx:key="index">
+            <view class="doctor_img">
+              <view class="round_img">
+                <image src="{{item.img}}" style="object-fit: contain; width: 100%; height: 100%; border-radius: 100%;"/>
+              </view>
+            </view>
+            <view class="doctor_content">
+              <view style="font-size: larger; float: left; margin-left: 10rpx; margin-top: 20rpx;">{{item.name}}</view>
+              <view style="float: left; margin-top: 25rpx; margin-left: 10rpx; color: rgb(156, 154, 154); margin-right: 0rpx;">{{item.position}}</view>
+              <view class="hospital_level" style="font-size: 20rpx; vertical-align: middle; text-align: center;">{{item.level}}</view>
+              <view style="position: absolute; bottom: 25rpx; left: 80rpx; font-size: 20rpx;color: rgb(156, 154, 154);">{{item.hospital}}</view>
+            </view>
+            <!--按钮-->
+            <view style="float: left; width: 10%; height: 100%;">
+              <view class="doctor_consult" style="font-size: 20rpx;">问诊</view>
+            </view>
+          </view>
+      </scroll-view>
+      </view>
+      <!--分类-->
+      <view class="text2">
+        <view class="department_category_text">科室分类</view>
+        <view class="department_category_option">
+          <view class="option checked" bindtap="checkedCategory" data-category="全部">全部</view>  
+          <view class="option" wx:for="{{departmentCategory}}" wx:for-item="department" bindtap="checkedCategory" data-category="{{department}}">{{department}}</view>  
+          <view style="float: right; margin-top: 6rpx;">更多</view>
+        </view>
+      </view>
+      <view class="department_category">
+        <view class="category {{(index+1)%3 == 0}} ? 'end':''" wx:for="{{category}}" wx:for-item="category">
+          <view style="text-align: center; font-size: 13px;">{{category.name}}</view>
+          <view style="text-align: center; font-size: 11px; color: rgba(146, 141, 141, 0.767);">{{category.content}}</view>
+        </view>
+        <!-- <view style="clear: both;"></view> -->
+      </view>
+    </view>
+  </view>
+</view>

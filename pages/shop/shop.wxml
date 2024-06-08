@@ -1,0 +1,89 @@
+<view class="main flex flex-column bg-gradual-index-bg">
+  <cu-custom bgColor="bg-gradual-index">
+    <view slot="content" style="font-size:42rpx;">商城</view>
+  </cu-custom>
+  <view class="body">
+    <view class="header flex">
+      <view class="avatar flex align-center justify-center">
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="data">
+        <view class="font-title">{{userInfo.nickName}}</view>
+        <view class="flex align-center flex-row" style="margin-top: 10rpx;">
+          <view class="level">{{level}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="box flex align-center justify-around">
+      <view class="flex flex-column align-center">
+        <image src="/image/index_shop.png"></image>
+        <view class="font-content" style="margin-top: 10rpx">首页</view>
+      </view>
+      <view class="flex flex-column align-center">
+        <image src="/image/message_shop.png"></image>
+        <view class="font-content" style="margin-top: 10rpx">消息</view>
+      </view>
+      <view class="flex flex-column align-center" bindtap="toShoppingCart">
+        <image src="/image/shopcar_shop.png"></image>
+        <view class="font-content" style="margin-top: 10rpx">购物车</view>
+      </view>
+      <view class="flex flex-column align-center">
+        <image src="/image/person_shop.png"></image>
+        <view class="font-content" style="margin-top: 10rpx">我的订单</view>
+      </view>
+    </view>
+    <view class="shop_card flex">
+      <view class="card_child flex flex-column align-center">
+        <view><text class="text-orange" style="margin-right:5rpx;">{{credits}}</text><text>积分</text></view>
+        <view class="font-small">积分增减记录</view>
+      </view>
+      <view class="card_child flex flex-column align-center">
+        <view class="flex align-center">
+          <image src="/image/punch_clock.png" style="width:35rpx;height:35rpx;"></image>
+          <view>每日打卡</view>
+        </view>
+        <view class="font-small">今日打卡+1</view>
+      </view>
+      <view class="card_child flex flex-column align-center" style="border-right:none;">
+        <view>兑换记录</view>
+        <view class="font-small">积分商品记录</view>
+      </view>
+    </view>
+    <view class="offer flex align-center justify-between">
+      <view class="offer_card offer-bg-one">
+        <view>积分抽公益道具啦！</view>
+        <view class="font-small" style="margin-top:10rpx;">肥料/饲料/保护罩都有哦</view>
+        <view class="flex justify-between" style="margin-top:10rpx;">
+          <view class="font-small go_btn" hover-class="click">GO ></view>
+          <image src="https://img0.baidu.com/it/u=290945221,1177407843&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=542"
+            style="width:80rpx;height:80rpx; bottom: 35rpx;"></image>
+        </view>
+      </view>
+      <view class="offer_card offer-bg-two">
+        <view class="flex align-center">
+          <image src="/image/clock_red.png" style="width:40rpx;height:40rpx"></image>
+          <view>每日必抢</view>
+        </view>
+        <view class="font-small" style="margin-top:10rpx;">牙牙乐营养牙膏</view>
+        <view class="flex justify-between" style="margin-top:10rpx;">
+          <view class="font-small rob_btn" hover-class="click">8888积分 ></view>
+          <image src="https://img0.baidu.com/it/u=290945221,1177407843&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=542"
+            style="width:80rpx;height:80rpx;"></image>
+        </view>
+      </view>
+    </view>
+    <view class="condition flex align-center justify-between">
+      <view class="{{conditionIndex==index?'cond_list cond_select flex align-center justify-center':'cond_list flex align-center justify-center'}}" wx:for="{{condition}}" wx:key="index" bindtap="setConIndex" data-index="{{index}}">{{item}}</view>
+    </view>
+    <view class="goods flex flex-wrap justify-between">
+      <view class="goods_list flex flex-column justify-between" wx:for="{{goodList}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <view class="goods_name">{{item.name}}</view>
+        <view class="flex align-end justify-between">
+          <view class="goods_credits"><text class="text-orange">{{item.credits}} </text>积分</view>
+          <view class="goods_sales">月兑：{{item.sales}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

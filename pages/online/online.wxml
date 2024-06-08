@@ -1,0 +1,21 @@
+<!--背景-->
+<view class="main flex flex-column bg-gradual-index-bg">
+  <!---顶部-->
+  <cu-custom bgColor="bg-gradual-index" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content" style="font-size:42rpx;">在线医师</view>
+  </cu-custom>
+  <view class="body">
+    <!--搜索区域-->
+    <view class="search">
+      <!--搜索框-->
+      <input type="text" class="search_input" placeholder="请输入要搜索的医生" placeholder-style="margin: 0 55rpx" />
+      <!-- 搜索按钮部分 -->
+      <view class="search_img flex align-center justify-center">
+        <image style="width:70%;height:70%;" src="/image/search.png" bindtap="search" />
+      </view>
+    </view>
+    <!---搜索按钮-->
+    <view style="position: relative; height: 70%; width: 80rpx; left: 620rpx; top: 7%; text-align: center; background-color: rgb(42, 117, 42); color: #f5ebe0; border-radius: 15%;">搜索</view>
+  </view>
+</view>

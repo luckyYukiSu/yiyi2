@@ -1,0 +1,35 @@
+.body{
+  padding: 50rpx 30rpx 30rpx 30rpx;
+}
+.box{
+  width: 100%;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  /* margin-top: 100rpx; */
+  background: #fff;
+}
+.box_header{
+  width: 100%;
+  overflow: hidden;
+  /* height: 150rpx; */
+  padding: 20rpx;
+  border-radius: 15rpx;
+  background: linear-gradient(to right,#BBECCA,#F0F2C1);
+}
+.update_font{
+  font-size: 36rpx;
+  margin-left: 15rpx;
+}
+.save_font{
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+.from{
+  width: 100%;
+}
+.from_font{
+  font-size: 38rpx;
+}
+.cu-form-group{
+  padding: 10rpx;
+}

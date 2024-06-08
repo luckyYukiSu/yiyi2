@@ -1,0 +1,93 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+/* 公共样式 */
+.main{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-y: auto;
+  background: linear-gradient(to bottom,rgb(96,174,164) , rgb(227,240,233), rgb(224,240,209));
+  /* color: rgb(red, green, blue); */
+  font-weight: 550;
+}
+.body{
+  width: 100%;
+  /* flex-direction: column; */
+  flex: 1;
+  position: relative;
+  overflow: auto;
+}
+.flex{
+  display: flex;
+}
+.align-center{
+  align-items: center;
+}
+.align-end{
+  align-items: flex-end;
+}
+.justify-end{
+  justify-content: flex-end;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.justify-around{
+  justify-content: space-around;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.font-small{
+  font-size: small;
+  font-weight: 500;
+}
+.font-title{
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.font-content{
+  font-size: 28rpx;
+  font-weight: 600;
+}
+/* 交互点击效果 */
+.click{
+  transform: scale(0.98);
+  transition: transform .3s;
+}
+.click:active{
+  transform: scale(1);
+  transition: 0s;
+}
+.click:after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .3s, opacity .5s;
+  /* transition: opacity .5s; */
+}
+.click:active:after {
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}

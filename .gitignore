@@ -1,0 +1,25 @@
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Node.js
+node_modules/
+
+
+# Config.json
+project.private.config.json
+
+# Debug info
+debug.log
+
+# 提供自己使用的md文档
+README.md 
+git.md
